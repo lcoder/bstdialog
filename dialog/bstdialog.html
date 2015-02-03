@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>百顺通云-全局对话框</title>
+    <script type="text/javascript" src = "js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src = "js/dialog.min.js"></script>
+    <script type="text/javascript" src = "js/bstdialog.js"></script>
+    <script type="text/javascript" src = "js/demo_bstdialog.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/dialog.css" />
+    <link rel="shortcut icon" href="http://172.16.3.174/cdn/bst/images/favicon.png" type="image/x-icon">
+    <!-- 代码高亮 snippet插件-->
+    <script type="text/javascript" src = "js/jquery.snippet.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/jquery.snippet.css" />
+    <style type="text/css">
+a{color: #000;text-decoration: none;}
+dl{font-size: 14px;}
+dl a{font-size: 12px;color:red;margin-left: 20px;}
+dl dt{text-indent: 2em;margin-top: 30px;}
+dl dd{text-indent: 2em;}
+dl dd code{color: #666;display: block;}
+dl dd span{color: #666;}
+ul,ol{list-style: none;}
+pre{font-size: 14px;}
+p a{color: red;}
+.helps { font-size: 14px; }
+.helps pre { padding: 20px; margin: 10px 0; border: solid 1px #e7e1cd; background-color: #fffdef; overflow: auto; font-size: 12px;}
+.icon_lists li { float: left; width: 100px; height: 150px; text-align: center; }
+.icon_lists .icon { font-size: 42px; line-height: 100px; margin: 10px 0; color: #333; -webkit-transition: font-size 0.25s ease-out 0s; -moz-transition: font-size 0.25s ease-out 0s; transition: font-size 0.25s ease-out 0s; }
+.icon_lists .icon:hover { font-size: 100px; }
+div a{color:red;font-size: 12px;}
+
+html{background:#fafafa; color:#333; _background-image:url(about:blank);_background-attachment:fixed;}
+html.isPhone{min-width: 1196px;}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,
+button,input,select,textarea,th,td{margin:0;padding:0;}
+body,button,input,select,textarea{ font:16px/1.5 "Microsoft YaHei",Tahoma,Helvetica,Arial,simsun}
+address,cite,dfn,em,var,i{font-style:normal;}
+ul,ol{list-style:none;}
+fieldset,img{border:0;}
+h1{font-size:18px;}
+h2{font-size:14px; font-weight:bold;}
+h3{font-size:14px; font-weight:400;}
+h4,h5{font-size:12px; font-weight:400;}
+input,textarea,button,select{font-size:12px; outline:none; resize:none; color:#333;}
+button{cursor: pointer;}
+table{border-collapse:collapse;border-spacing:0;}
+.clear {clear:both; height:0; font-size:0; line-height:0; overflow:hidden;}
+.cle:after, .clearfix:after, .clear_f:after, .cle_float:after{visibility:hidden; display:block; font-size:0; content:'\20'; clear:both; height:0;}
+.cle, .clearfix, .clear_f, .cle_float{*zoom:1}
+.fl {float:left;}
+.fr {float:right;}
+a{text-decoration:none; color:#333; -webkit-transition: color .2s;-moz-transition: color .2s;-o-transition: color .2s; -ms-transition: color .2s;transition: color .2s;}
+a:hover{text-decoration:underline; color: #00A2CA;}
+a:focus,area:focus{outline:none;}
+::selection {background:#00A2CA; color:#fff;}
+canvas {-ms-touch-action: double-tap-zoom;}
+
+    </style>
+</head>
+
+<body>
+<h1 style="text-align:center;padding:20px;">BSTYUN.dialog对话框示例</h1>
+<p>调用需要<br/><span style="font-weight:800;">js引用</span>：<br/>
+    基于jquery，引入jquery之后调用<br/>
+    &lt;script type="text/javascript" src = "js/<a href="http://172.16.3.174/cdn/bst/js/dialog.min.js">dialog.min.js</a>"&gt;&lt;/script&gt;<br/>
+    &lt;script type="text/javascript" src = "js/<a href="http://172.16.3.174/cdn/bst/bstyun_dialog_source/bstdialog.min.js">bstdialog.min.js</a>"&gt;&lt;/script&gt;<br/>
+    <span style="font-weight:800;">css引用</span><br/>
+    &lt;link type="text/css" rel="stylesheet" href="css/<a href="http://172.16.3.174/cdn/bst/css/dialog.min.css">dialog.min.css</a>" /&gt;
+</p>
+<h3 style="font-size:18px;margin-top:20px;">demo：</h3>
+<dl>
+  <dt>提示对话框<a href="javascript:void(0)" name = "ok">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">BSTYUN.dialog.ok('修改成功');</pre>
+    </code>
+  </dd>
+
+  <dt>警告对话框<a href="javascript:void(0)" name = "warn">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">BSTYUN.dialog.warn('网络错误，请检查');</pre>
+    </code>
+  </dd>
+
+  <dt>操作成功对话框<a href="javascript:void(0);" name = "success">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+     <pre class="js">BSTYUN.dialog.success('评论成功');</pre>
+    </code>
+  </dd>
+
+  <dt>禁止操作对话框<a href="javascript:void(0)" name = "prohibit">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">BSTYUN.dialog.prohibit('请先选择套餐');</pre>
+    </code>
+  </dd>
+
+  <dt>右下角通知对话框<a href="javascript:void(0)" name = "notice">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">BSTYUN.dialog.notice('尊敬的顾客朋友，您IQ卡余额不足10元，请及时充值');</pre>
+    </code>
+  </dd>
+
+  <dt>确认对话框<a href="javascript:void(0);" name ="confirm">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">BSTYUN.dialog.confirm('确认提交订单？');</pre>
+    </code>
+  </dd>
+
+    <dt>加载中<a href="javascript:void(0)" name = "loading">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">BSTYUN.dialog.loading(html);</pre>
+    </code>
+  </dd>
+
+  <dt>ajax填充内容<a href="javascript:void(0)" name = "requestContent">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">var url = '/cdn/bst/bstdialog_requestcontent.html';//请求的url
+BSTYUN.dialog.requestContent(url);</pre>
+    </code>
+  </dd>
+  <dt>购物车对话框<a href="javascript:void(0)" name ="go2cart">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">
+      var html = '';//定义内容结构
+      html = '&lt;div class="addcart_success"&gt;&lt;h3&gt;您已经购买的套餐：&lt;/h3&gt;&lt;dl&gt;';
+      html += '&lt;dt&gt;&lt;span class="taocan_name"&gt;&lt;input type="radio" class="taocan_radio" name ="taocan" checked="checked"/&gt;套餐&lt;em&gt;A&lt;/em&gt;名称:XXX&lt;/span&gt;&lt;span&gt;使用年限：&lt;em class="use_year"&gt;2&lt;/em&gt;年 使用人数：&lt;em class="use_people"&gt;100人&lt;/em&gt;&lt;/span&gt;&lt;/dt&gt;';
+      html += '&lt;dd&gt;&lt;p&gt;子产品：OA，即时通，云随洽&lt;/p&gt;&lt;/dd&gt;';
+      html += '&lt;dt&gt;&lt;span class="taocan_name"&gt;&lt;input type="radio" class="taocan_radio" name ="taocan"/&gt;套餐&lt;em&gt;B&lt;/em&gt;名称:XXX&lt;/span&gt;&lt;span&gt;使用年限：&lt;em class="use_year"&gt;1&lt;/em&gt;年 使用人数：&lt;em class="use_people"&gt;99人&lt;/em&gt;&lt;/span&gt;&lt;/dt&gt;';
+      html += '&lt;dd&gt;&lt;p&gt;子产品：视频会议&lt;/p&gt;&lt;/dd&gt;';
+      html += '&lt;p class="taocan_detail"&gt;&lt;/p&gt;';
+      html += '&lt;/dl&gt;&lt;div class="btm"&gt;&lt;a href="javascript:BSTYUN.dialog.close();" class="graybtn"&gt;取消&lt;/a&gt;&lt;span&gt;&nbsp;&lt;/span&gt;&lt;a href="javascript:BSTYUN.dialog.close();" class="btn"&gt;确定&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;';
+      BSTYUN.dialog.go2cart(html);</pre>
+    </code>
+  </dd>
+  <dt>弹窗倒计时关闭1<a href="javascript:void(0)" name = 'timedown'>戳我查看</a></dt>
+  <dd>
+    code：
+      <code>
+        <pre class="js">BSTYUN.dialog.creat({
+          content: "时间越来越少，越来越少..",
+          init: function () {
+            var that = this, i = 5;
+              var fn = function () {
+                  that.title(i + "秒后关闭");
+                  !i && that.close();
+                  i --;
+              };
+              timer = setInterval(fn, 1000);
+              fn();
+          },
+          close: function () {
+            clearInterval(timer);
+          }
+})</pre>
+      </code>
+
+  </dd>
+  <dt>弹窗倒计时关闭2:可参数设置<a href="javascript:void(0)" name = 'timedown2'>戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">BSTYUN.dialog.creat({
+        content: "默认3秒后关闭",
+        title: '标题',
+        time: 3
+})</pre>
+    </code>
+  </dd>
+  <dt>全局登入<a href="javascript:void(0)" name ="showLogin">戳我查看</a></dt>
+  <dd>
+    code：
+    <code>
+      <pre class="js">BSTYUN.dialog.showLogin()</pre>
+    </code>
+  </dd>
+</dl>
+<div style="height:100px;padding:20px;">
+  附件：<br>
+  <a href="http://172.16.3.174/cdn/bst/font/bstfont.html" target="_blank">百顺通云图标库</a><br>
+  <a href="http://172.16.3.174/cdn/bst/bstyun_dialog_source.rar" target="_blank">BSTYUN.dialog源码</a>
+</div>
+<h4 style="font-size:18px;margin:20px;">BSTYUN.dialog API:</h4>
+  <code>
+<pre class="js">BSTYUN.dialog = {
+  /**
+   * [创建dialog对话框]
+   * @param  {[字面量格式]} options  [对话框参数]
+   * @return {[dialog]}              [创建的dialog对象]
+   */
+    creat: function (options) {
+        var dialog = null;
+        options = $.extend({
+            fixed:true,
+            title:false,
+            lock:true,
+            padding:'20px 40px',
+            id: '',
+            content: ''
+        },options);
+        dialog=$.dialog(options);
+        return dialog;
+    },
+  /**
+   * 关闭对话框
+   * @param  {[string]} id   [dialog对象的id]
+   * @return {[undefind]}    [无返回值]
+   */
+  close: function(id){
+    var i,list = $.dialog.list;
+    if (id) {
+      list[id].close();
+    }else{
+      for (i in list) {
+        list[i].close();
+      }
+    }
+  },
+  /**
+   * [获取dialog对象]
+   * @param  {[string]} id [dialog对象的id]
+   * @return {[dialog]}    [无参数，则返回全部dialog，有id，则返回对应的dialog对象]
+   */
+  get: function(id){
+    return id === undefined ? $.dialog.list : $.dialog.list[id]; 
+  },
+  /**
+   * [提示信息]
+   * @param  {[string]}   html   [提示内容]
+   * @param  {Function} callback [回调函数]
+   * @return {[undefined]}       [无返回值]
+   */
+  ok: function (html,callback){
+        var dialog = null;
+        html = '&lt;div class="ok-tip"&gt;&lt;i class="iconfont"&gt;&#xe629;&lt;/i&gt;'+html+'&lt;/div&gt;';
+        dialog = this.creat({id:'ok',content:html});
+        dialog.button({
+            name: '知道了',
+            focus: true,
+            callback: callback
+        });
+    },
+    /**
+     * [警告信息]
+     * @param  {[string]}   html     [警告内容]
+     * @param  {Function} callback   [回调函数]
+     * @return {[undefined]}         [无返回值]
+     */
+  warn: function(html,callback){
+    var dialog = null,
+    html = '&lt;div class="warn-tip"&gt;&lt;i class="iconfont"&gt;&#xe603;&lt;/i&gt;'+html+'&lt;/div&gt;';
+    dialog = this.creat({id: 'warn',content:html});
+    dialog.button({
+      name: '知道了',
+      focus: true,
+      callback: callback
+    });
+  },
+  /**
+   * [操作成功]
+   * @param  {[string]} html    [成功提示]
+   * @param  {[number]} time    [提示消失时间，秒]
+   * @return {[undefined]}        [无返回值]
+   */
+    success: function (html,time) {
+        var dialog = null;
+        time = time || 2;
+        this.close();
+        html = '&lt;div class="success-tip"&gt;&lt;i class="iconfont"&gt;&#xe662;&lt;/i&gt;'+html+'&lt;/div&gt;'
+        dialog = this.creat({id:'success',content:html,lock:false});
+        setTimeout(function(){
+            var $dg = $(dialog.DOM.wrap);
+            $dg.animate({'top':'-=50px','opacity':0},300,'easeInBack',function(){
+                dialog.close();
+            });
+        }, time*1000);
+    },
+    /**
+     * [确认对话框]
+     * @param  {[string]}   html     [确认内容]
+     * @param  {Function} callback   [回调函数]
+     * @return {[undefined]}         [无返回值]
+     */
+    confirm: function (html,callback) {
+        var dialog = null;
+        html = '&lt;div class="confirm-tip"&gt;&lt;i class="iconfont"&gt;&#xe61e;&lt;/i&gt;'+html+'&lt;/div&gt;';
+        dialog = this.creat({id:'confirm',content:html});
+        dialog.button({
+            name: '确定',
+            focus: true,
+            callback: callback
+        },{
+            name: '取消',
+        });
+    },
+    /**
+     * [禁止操作对话框]
+     * @param  {[string]}   html   [禁止内容]
+     * @param  {Function} callback [回调函数]
+     * @return {[undefined]}       [返回值]
+     */
+    prohibit: function(html,callback){
+        var dialog = null,$dg = null;
+        html = '&lt;div class="prohibit-tip"&gt;&lt;i class="iconfont"&gt;&#xe63e;&lt;/i&gt;'+html+'&lt;/div&gt;';
+        dialog = this.creat({
+            id: 'prohibit',
+            content: html,
+            init: function(){
+                $dg  = $('.aui_outer');
+                $dg.removeClass('aui_outer');
+            },
+            close: function(){
+                $dg.addClass('aui_outer');
+            }
+        });
+        dialog.button({
+            name: '知道了',
+            focus: true,
+            callback: callback
+        });
+        dialog.shake && dialog.shake();// 调用抖动接口
+    },
+    /**
+     * [右下角通知]
+     * @param  {[string]}   html     [通知内容]
+     * @param  {Function} callback   [回调函数]
+     * @return {[undefined]}         [返回值]
+     */
+    notice: function(html,callback){
+        var dialog = null;
+        dialog = art.dialog.notice({
+            id: 'notice',
+            title: '百顺通提醒您',
+            width: 220, // 必须指定一个像素宽度值或者百分比，否则浏览器窗口改变可能导致artDialog收缩
+            content: '&lt;div class="notice-tip"&gt;&lt;i class="iconfont"&gt;&#xe64b;&lt;/i&gt;'+html+'&lt;/div&gt;',
+            time: 5,
+            close: function(){
+                callback && callback();
+            }
+        });
+    },
+    /**
+     * [请求ajax返回数据]
+     * @param  {[string]}   url       [请求的后台地址]
+     * @param  {Function} callback    [确定的回调函数]
+     * @return {[undefined]}            [返回值]
+     */
+    requestContent: function(url,callback){
+    var dialog = null;
+      dialog = $.dialog({
+            fixed:true,
+            title:false,
+            lock:true,
+            padding:'20px 40px',
+            id: 'requestContent',
+            content: undefined
+      });
+      setTimeout(function(){
+        $.ajax({
+          url: url,
+          type: 'post',
+          dataType: 'text',
+          success:function(html){
+            dialog.content(html);
+            dialog.button([{
+                name: '确定',
+                focus: true,
+                callback: callback
+                }]);
+          },
+          error: function(error){
+            alert(error)
+          }
+        });
+      },3000);
+
+    },
+    /*购物车*/
+    go2cart: function(html){
+      var $cart = this.creat({
+          id: 'addCartSuccess',
+          title: false,
+          lock: true,
+          content: html
+      });
+      var $radio = $('.taocan_radio');
+      $radio.on('click', function(event) {
+      var $this = $(this);
+      var $em = $this.parent('span').next().find('em');
+      var taocan = $this.nextAll('em').text();
+      var use_year = $em.eq(0).text(),
+        use_people = $em.eq(1).text();
+      $('.addcart_success').find('.taocan_detail').html('您选择了'+taocan+'套餐，截至时间，则该产品您所能购买的最大年限为'+use_year+'年，最大使用人数为'+use_people+'人。同意点击确定，否则请点击取消');
+    });
+    $radio.eq(0).trigger('click');
+    },
+    /**
+     * [全局登录]
+     * @param  {[string]} reurl      [登录后的跳转地址]
+     * @return {[undefined]}         [返回值]
+     */
+    showLogin:function(reurl){
+        var _login_box = null,
+            reurl = reurl || location.href,
+        html = '&lt;div class="dialog_login_box"&gt;&lt;div id="login-box"&gt;'
+                +'&lt;h2&gt;&lt;div class="trig"&gt;没有帐号？&lt;a href="javascript:void(0)" target="_blank" class="trigger-box"&gt;点击注册&lt;/a&gt;&lt;/div&gt;登录&lt;/h2&gt;'
+                +'&lt;div class="form-bd"&gt;&lt;div class="form_box cle" id="login-bstyun"&gt;'
+                +'&lt;div class="login_box"&gt;&lt;form id="login-bstyun-form"&gt;&lt;ul class="form"&gt;'
+                +'&lt;li class="text_input"&gt;&lt;span class="error_icon"&gt;&lt;/span&gt;&lt;span class="iconfont"&gt;&#xe612;&lt;/span&gt;&lt;input type="text" name="j_username" class="text" placeholder="用户名/邮箱/手机号"&gt;&lt;/li&gt;'
+                +'&lt;li class="text_input"&gt;&lt;span class="error_icon"&gt;&lt;/span&gt;&lt;span class="iconfont"&gt;&#xe606;&lt;/span&gt;&lt;input type="password" name="j_password" class="text" placeholder="密码"&gt;&lt;/li&gt;'
+                +'&lt;li class="error_box"&gt;&lt;em&gt;&lt;/em&gt;&lt;/li&gt;'
+                +'&lt;li class="login_param"&gt;&lt;p&gt;&lt;a class="forget_psd" href="javascript:void(0)"&gt;忘记密码?&lt;/a&gt;&lt;label&gt;&lt;input type="checkbox" checked="checked" name="_spring_security_remember_me" class="remember-me"&gt;下次自动登录&lt;/label&gt;&lt;/p&gt;&lt;/li&gt;'
+                +'&lt;li class="last"&gt;&lt;input type="submit" class="btn" value="登 录" /&gt;&lt;/li&gt;'
+                +'&lt;/ul&gt;&lt;/form&gt;&lt;/div&gt;'
+                +'&lt;/div&gt;&lt;/div&gt;'
+                +'&lt;/div&gt;&lt;/div&gt;';
+        _login_box = BSTYUN.dialog.creat({
+            title: '您尚未登录',
+            lock: true,
+            drag: false,
+            fixed: true,
+            padding:"0",
+            id: "login",
+            content:html,
+            init: function() {
+
+                var $form = $('#login-bstyun-form'),
+                    $name = $form.find('input[name=j_username]'),
+                    $pwd = $form.find('input[name=j_password]'),
+                    $submit = $form.find('input[type=submit]'),
+                    $msg = $form.find('li.error_box em'),
+                    $input = $form.find('li.text_input');
+
+                    $form.find("input").focus(function() {
+                        $input.removeClass("params_error");
+                    });
+
+                $form.submit(function(){
+                    var _name = $.trim($name.val()),
+                        _pwd = $.trim($pwd.val()),
+                        text, params;
+
+                    if($submit.hasClass('disabled')){
+                        return false;
+                    }
+
+                    if(_name == '' || _pwd == ''){
+                        text = (_name == '') ? '请输入用户名':'请输入密码';
+                        $msg.text(text).show().delay(2000).fadeOut();
+                        return false;
+                    }
+
+                    $submit.addClass('disabled').val('登录中');
+                    params = {
+                        'j_username': _name,
+                        'j_password': _pwd,
+                        '_spring_security_remember_me':'on'
+                    };
+
+                    $.ajax({
+                        url: "/j_spring_security_check",
+                        type: 'post',
+                        data: params,
+                        dataType: 'json',
+                        success: function(data){
+                            if(data.status == 1){
+                                location.href=reurl;
+                            }else if(data.status == 0){
+                                $submit.removeClass('disabled').val('登 录');
+                                $msg.text('您输入的密码和用户名不匹配').show().delay(2000).fadeOut();
+                                $input.addClass('params_error');
+                            }
+                        },
+                        error: function(xhr){
+                            if(xhr.status == 200){
+                                location.reload();
+                            }else{
+                                $submit.removeClass('disabled').val('登 录');
+                                BSTYUN.dialog.warn("服务器忙，请稍后再试。("+xhr.status+")");
+                            }
+                        }
+                    });
+                    return false;
+                });
+            }
+        });
+    }
+};</pre>
+  </code>
+</body>
+</html>

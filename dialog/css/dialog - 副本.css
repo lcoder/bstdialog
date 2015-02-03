@@ -1,0 +1,56 @@
+/* 弹窗样式 */
+.aui_inner table{width: 100%;}
+.aui_loading {padding:20px 0 0; background:url(http://img.nala.com.cn/images/loading-16.gif) center 0 no-repeat; text-align:center; overflow:hidden; color:#bbb;}
+.aui_inner {background:#fafafa; box-shadow: 1px 1px 3px rgba(100, 100, 100, 0.3); border:1px solid #989898;}
+.aui_main {vertical-align: top; }
+.aui_content{min-width: 200px;}
+.aui_titleBar { position:relative; border-bottom: 1px solid #fff;}
+.aui_titleBar .aui_title{font-size: 20px; padding: 10px 20px; border-bottom: 1px solid #e0e0e0;}
+.aui_close{ background-image: url(http://img.nala.com.cn/lizi/b2c/images/ico.png); background-position:0 0; top:12px; right:12px; position:absolute;text-indent: -9999px;width:24px; height:24px; overflow:hidden;  margin-right: 0;}
+.aui_close:hover{ background-position:0 -24px;}
+.aui_buttons { background-color:#F6F6F6; border-top:1px solid #eee;padding:6px 10px;text-align:right; }
+.aui_dialog button { margin-left:15px; padding: 6px 8px; cursor: pointer; display: inline-block; text-align: center; line-height: 1; *padding:4px 6px; *height:2em; letter-spacing:2px; color: #999; border: solid 1px #ccc; border-radius: 2px; background: #eee;  }
+.aui_dialog button:hover{background: #ddd;}
+
+.aui_dialog button.highlight{ color: #fff; border: solid 1px #38abe4; background: #59bbec;}
+.aui_dialog button.highlight:hover{background: #7accf4;}
+
+.dialog_success .aui_close,
+.dialog_confirm .aui_close,
+.dialog_ok .aui_close,
+.dialog_warn .aui_close{display: none;}
+
+.aui_outer{ -webkit-animation: pop_in .5s;}
+@-webkit-keyframes pop_in {
+    0%{-webkit-transform:scale(0.6);opacity:0}
+    50%{-webkit-transform:scale(1.05);opacity:1}
+    100%{-webkit-transform:scale(1);opacity:1}
+}
+
+/*加入购物车成功*/
+.addcart_success{width: 420px; padding: 0 20px;}
+.addcart_success h3{font-size: 18px; color: #00A2CA; text-align: left;}
+.addcart_success p{color: #999; font-size: 14px; margin-bottom: 15px; text-align: left;}
+.addcart_success p.item{color: #333; height: 50px; overflow: hidden;}
+.addcart_success p.item img{width: 50px; height: 50px; vertical-align: middle;}
+.addcart_success .btm{padding-top: 20px;}
+
+.addcart_success .btm a { font-size: 16px; padding: 5px 0; height: 24px; line-height: 24px; width: 140px; text-align: center; }
+.graybtn:hover { text-decoration: none; color: #666; background: #e5e5e5; }
+.graybtn { display: inline-block; padding: 5px 12px; height: 16px; line-height: 16px; border: 1px solid #c4c4c4; border-radius: 2px; font-size: 100%; color: #666; background-color: #efefef; background-image: -webkit-linear-gradient(#f8f8f8, #e5e5e5); background-image: -moz-linear-gradient(#f8f8f8, #e5e5e5); background-image: linear-gradient(#f8f8f8, #e5e5e5); background-repeat: repeat-x; vertical-align: middle; }
+.addcart_success .btm span { display: inline-block; width: 80px; }
+.addcart_success input{vertical-align: text-bottom;margin-right: 3px;}
+.addcart_success dl{margin-top: 10px;}
+.addcart_success dl dt{}
+.addcart_success dl dt span.taocan_name{margin-right: 5px;}
+.addcart_success dl dd{margin-top: 5px;}
+
+/*全站按钮*/
+.btn,.btn-css3{display: inline-block; padding: 5px 12px; height: 16px; line-height: 16px; _line-height: 18px; border: 1px solid #00A2CA; border-radius: 3px; font-size: 100%; color: #fff!important; background-color:#00A2CA; overflow: hidden; vertical-align: middle;}
+
+.btn:hover,.btn-css3:hover{text-decoration: none; color: #fff; background:#00A2CA; }
+.btn img,.btn-css3 img{vertical-align: middle;}
+
+.graybtn{display: inline-block; padding: 5px 12px; height: 16px; line-height: 16px; border: 1px solid #c4c4c4; border-radius: 2px; font-size: 100%; color: #666; background-color:#efefef; background-image:-webkit-linear-gradient(#f8f8f8, #e5e5e5); background-image:-moz-linear-gradient(#f8f8f8, #e5e5e5); background-image:linear-gradient(#f8f8f8, #e5e5e5); background-repeat:repeat-x; vertical-align: middle;}
+.graybtn:hover{text-decoration: none; color: #666; background:#e5e5e5;}
+
